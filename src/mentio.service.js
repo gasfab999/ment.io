@@ -500,9 +500,12 @@ angular.module('mentio')
             var style = div.style;
             var computed = window.getComputedStyle ? getComputedStyle(element) : element.currentStyle;
 
-            style.whiteSpace = 'pre-wrap';
             if (element.nodeName !== 'INPUT') {
+                style.whiteSpace = 'pre-wrap';
                 style.wordWrap = 'break-word';
+            }
+            else {
+                style.whiteSpace = 'pre';
             }
 
             // position off-screen
